@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane focusTraversable="false" prefHeight="500.0" prefWidth="400.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tweiiy.cryptopassgenerator.Controller">
+   <tabs>
+      <Tab text="Password generator">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="279.0" prefWidth="335.0">
+               <children>
+                  <CheckBox fx:id="isNumbers" focusTraversable="false" layoutX="27.0" layoutY="33.0" mnemonicParsing="false" onAction="#ChangeNumbers" prefHeight="33.0" prefWidth="100.0" text="Numbers" />
+                  <CheckBox fx:id="isLetters" focusTraversable="false" layoutX="27.0" layoutY="66.0" mnemonicParsing="false" onAction="#ChangeLetters" prefHeight="33.0" prefWidth="100.0" text="Letters" />
+                  <CheckBox fx:id="isSymbols" focusTraversable="false" layoutX="27.0" layoutY="99.0" mnemonicParsing="false" onAction="#ChangeSymbols" prefHeight="33.0" prefWidth="100.0" text="Symbols" />
+                  <Button fx:id="Generate" focusTraversable="false" layoutX="52.0" layoutY="380.0" mnemonicParsing="false" onAction="#generateOnClick" prefHeight="43.0" prefWidth="87.0" text="Generate" />
+                  <Label fx:id="password" alignment="CENTER" layoutX="51.0" layoutY="233.0" prefHeight="127.0" prefWidth="298.0" text="password" textFill="#bb00ff" wrapText="true">
+                     <font>
+                        <Font name="Comic Sans MS" size="18.0" />
+                     </font></Label>
+                  <TextArea fx:id="Length" focusTraversable="false" layoutX="280.0" layoutY="97.0" prefHeight="37.0" prefWidth="58.0" promptText="Length" />
+                  <Button fx:id="CopyGenerator" focusTraversable="false" layoutX="157.0" layoutY="380.0" mnemonicParsing="false" onAction="#CopyGeneratorOnClick" prefHeight="43.0" prefWidth="87.0" text="Copy" />
+                  <Button fx:id="SaveGenerator" focusTraversable="false" layoutX="261.0" layoutY="380.0" mnemonicParsing="false" onAction="#SaveGeneratorOnClick" prefHeight="43.0" prefWidth="87.0" text="Save" />
+                  <CheckBox fx:id="isUpper" focusTraversable="false" layoutX="27.0" layoutY="132.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="100.0" text="Is upper" />
+                  <TextArea fx:id="Comment" focusTraversable="false" layoutX="201.0" layoutY="45.0" prefHeight="0.0" prefWidth="137.0" promptText="Comment" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Saved passwords">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="table" focusTraversable="false" prefHeight="409.0" prefWidth="400.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="passwordsColumn" prefWidth="200.0" text="Password" />
+                      <TableColumn fx:id="commentColumn" prefWidth="200.0" text="Comment" />
+                    </columns>
+                  </TableView>
+                  <Button focusTraversable="false" layoutX="80.0" layoutY="418.0" mnemonicParsing="false" onAction="#SavedCopy" prefHeight="39.0" prefWidth="82.0" text="Copy" />
+                  <Button focusTraversable="false" layoutX="234.0" layoutY="418.0" mnemonicParsing="false" onAction="#Delete" prefHeight="39.0" prefWidth="82.0" text="Delete" />
+               </children></AnchorPane>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>
